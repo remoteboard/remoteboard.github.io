@@ -9,7 +9,7 @@
     <script type="text/javascript">
         var id = document.location.search.substr(1);
         document.location.replace(
-            "standalone" in window.navigator ?
+            (/iPad|iPhone|iPod/.test( navigator.userAgent )) ?
             'remoteboard://' + id :              // iOS
             'http://remoteboard.github.io/404.html?' + id);   // others
     </script>
