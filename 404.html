@@ -3,7 +3,9 @@
 Meow... what is this?
 <script type="text/javascript">
 	document.write(document.location.search.substr(1));
-	document.write(navigator);
+	for(var key in navigator) {
+		document.write(key + " = " + navigator[key] + "\n");
+	}
 </script>
 </body>
 </html>
