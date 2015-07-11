@@ -1,5 +1,17 @@
+<!-- http://stackoverflow.com/questions/4403992/possible-to-handle-your-own-http-url-schemes-in-ios -->
+<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <title>Remoteboard</title>
+</head>
 <body>
-hello
+    <script type="text/javascript">
+        var id = document.location.search.substr(1);
+        document.location.replace(
+            "standalone" in window.navigator ?
+            'remoteboard://' + id :              // iOS
+            'http://remoteboard.github.io/404.html?' + id);   // others
+    </script>
 </body>
 </html>
