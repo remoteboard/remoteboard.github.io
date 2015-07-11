@@ -10,7 +10,7 @@
         var id = document.location.search.substr(1);
         document.location.replace(
             (/iPad|iPhone|iPod/.test( navigator.userAgent )) ?
-            'remoteboard://' + id :              // iOS
+            'remoteboard://' + id :              			  // iOS
             'http://remoteboard.github.io/404.html?' + id);   // others
     </script>
 </body>
