@@ -10,10 +10,10 @@
 <body>
     This is index.html. <br />
     <script type="text/javascript">
-    	var kv = remoteboard.parseQuery();
-        var id = kv.canvasId || kv.id;
+        // var kv = remoteboard.parseQuery();
+        // var id = kv.canvasId || kv.id;
         if((/iPad|iPhone|iPod/.test( navigator.userAgent ))) {
-        		document.location.replace('remoteboard://' + (id && id.length > 0 ? id : ''));
+            document.location.replace('remoteboard://' + document.location.search);
         }
         document.write("id = ", id);
     </script>
