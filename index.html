@@ -13,7 +13,7 @@
     	var kv = remoteboard.parseQuery();
         var id = kv.canvasId || kv.id;
         if((/iPad|iPhone|iPod/.test( navigator.userAgent ))) {
-        	document.location.replace('remoteboard://' + id);
+        		document.location.replace('remoteboard://' + (id && id.length > 0 ? id : ''));
         }
         document.write("id = ", id);
     </script>
