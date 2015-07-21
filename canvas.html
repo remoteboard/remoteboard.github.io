@@ -1,0 +1,50 @@
+<!-- http://stackoverflow.com/questions/4403992/possible-to-handle-your-own-http-url-schemes-in-ios -->
+<!-- http://iosdevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Remoteboard</title>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script src="js/utils.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="screen" />
+</head>
+<body>
+    <script type="text/javascript">
+        if((/iPad|iPhone|iPod/.test( navigator.userAgent ))) {
+            // for iOS, just a simple replace; keep the query params.
+            bootbox.dialog({
+                message:"Did you know there is an app for iOS?",
+                onEscape: function() {},
+                buttons: {
+                    openApp: {
+                        label: "Yep, open app",
+                        className:"btn-primary",
+                        callback: function(){
+                            document.location.replace('remoteboard://' + document.location.search);
+                        }
+                    },
+                    appStore: {
+                        label: "Nope, but I would like to try it",
+                        className:"btn-success",
+                        callback: function(){
+                            window.location.href="download.html";
+                        }
+                    },
+                    cancel: {
+                        label: "Continue with webapp",
+                        callback: function(){
+                            bootbox.hideAll();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    I guess we have to suck with webapp, right? <br />
+    This is under development. For now, just pretend that <script>document.write(remoteboard.parseQuery().id)</script> was opened. :-(
+</body>
+</html>

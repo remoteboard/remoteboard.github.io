@@ -1,21 +1,20 @@
-<!-- http://stackoverflow.com/questions/4403992/possible-to-handle-your-own-http-url-schemes-in-ios -->
-<!-- http://iosdevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Remoteboard</title>
+
     <script src="js/utils.js"></script>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="screen" />
 </head>
 <body>
-    This is index.html. <br />
     <script type="text/javascript">
-        // var kv = remoteboard.parseQuery();
-        // var id = kv.id;
-        if((/iPad|iPhone|iPod/.test( navigator.userAgent ))) {
-            document.location.replace('remoteboard://' + document.location.search);
+        var id = remoteboard.parseQuery().id;
+        if(id && id.length) {
+            window.location.href = "canvas.html" + window.location.search;
         }
-        document.write("id = ", remoteboard.parseQuery().id);
     </script>
+    <a href="download.html">Download</a>
 </body>
 </html>
