@@ -8,13 +8,15 @@
 </head>
 <body>
     <script type="text/javascript">
-        if((/iPad|iPhone|iPod/.test( navigator.userAgent ))) {
-        	// then jump to itunes page
-        	// window.location.href = ...
+        if((/iPad|iPhone|iPod|Macintosh/.test( navigator.userAgent ))) {
+        	document.write("Detected iOS / Macintosh. Jumping to iTunes store in 3 seconds... <br />");
+        	// then jump to itunes page in 3 seconds
+        	setTimeout(function() {
+				window.location.href = "https://itunes.apple.com/us/app/elsks-remoteboard/id1021556917?ls=1&mt=8";
+        	}, 3000);
         }
     </script>
-
-Android <br />
-iOS <br />
+Android -- in development <br />
+<a href="https://itunes.apple.com/us/app/elsks-remoteboard/id1021556917?ls=1&mt=8">iOS</a> <br />
 </body>
 </html>
